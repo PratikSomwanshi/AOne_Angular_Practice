@@ -1,5 +1,19 @@
-<div [ngClass]="globalState.showSideBar ? 'absolute top-0 w-screen h-screen bg-slate-100'
-    : 'hidden'">
-    <h1>{{globalState.showSideBar}}</h1>
-    <button class=" btn" (click)="toggleSideBar()">toggle</button>
+<div
+    [ngClass]="globalState.showSideBar ? 'fixed inset-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-50' : 'hidden'">
+
+    <div class="container mx-auto h-full w-full px-4 sm:px-6 lg:px-8 flex flex-col">
+        <div class="flex justify-end pt-4 sm:pt-6">
+            <button class="text-2xl" (click)="toggleSideBar()">
+                ❌
+            </button>
+        </div>
+        <div class="flex-grow flex items-center justify-center">
+            <div class="w-full max-w-3xl relative">
+                <input type="text" placeholder="Search Apps, Programs, Software..."
+                    class="w-full h-12 sm:h-16 md:h-20 px-4 pr-12 rounded-lg text-lg sm:text-xl outline-none">
+                <img src="/navbar_icons/search.svg" alt="search"
+                    class="absolute right-4 top-1/2 transform -translate-y-1/2 h-full sm:h-8 w-6 sm:w-8">
+            </div>
+        </div>
+    </div>
 </div>
