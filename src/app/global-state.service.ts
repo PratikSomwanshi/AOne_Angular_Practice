@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalStateService {
   showSearch = false;
-  showSideBar = true;
+  showSideBar = false;
 
   constructor() {}
 
