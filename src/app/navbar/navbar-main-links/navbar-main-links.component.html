@@ -1,7 +1,9 @@
 <ul class="h-full flex">
     @for(link of link_list; track $index){
     <li class=" h-full w-[8rem] relative group">
-        <a href="#" class="flex flex-col justify-center items-center h-full hover:brightness-75 transition-all">
+        <a [routerLink]="(link.name.toLowerCase() == 'home' ? '' : link.name.toLowerCase())"
+            routerLinkActive="bg-base-200 text-primary-500" [routerLinkActiveOptions]="{ exact: true }"
+            class="flex flex-col justify-center items-center h-full hover:brightness-75 transition-all">
             <img src="{{link.icon}}" alt="nothing" class="h-[45%]">
             <p class="">{{link.name}}</p>
         </a>

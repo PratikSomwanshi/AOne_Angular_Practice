@@ -14,9 +14,10 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { NavigationSidebarComponent } from './navigation-sidebar/navigation-sidebar.component';
 import { NavigationHamburgerMenuComponent } from './navbar/navigation-hamburger-menu/navigation-hamburger-menu.component';
 import { NavigationMenuSidebarComponent } from './navbar/navigation-menu-sidebar/navigation-menu-sidebar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent, NavigationHamburgerMenuComponent, NavigationMenuSidebarComponent],
+  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent, NavigationHamburgerMenuComponent, NavigationMenuSidebarComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

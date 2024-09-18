@@ -12,5 +12,5 @@ export const link_list = [
   },
   { name: 'News', icon: '/navbar_icons/news.svg' },
   { name: 'Articles', icon: '/navbar_icons/article.svg' },
-  { name: 'FAQ', icon: '/navbar_icons/news.svg' },
+  { name: 'FAQs', icon: '/navbar_icons/news.svg' },
 ];
