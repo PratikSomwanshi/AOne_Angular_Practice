@@ -1,7 +1,7 @@
 <div
     class="h-[5rem] border-b border-white flex justify-between  1100:justify-around items-center px-2 650:container mx-auto">
     <div class="650:hidden ">
-        <img src="/navbar_icons/menu.svg" alt="#" class="h-8 w-8">
+        <app-navigation-hamburger-menu />
     </div>
     <div class="min-w-10 min-h-full flex justify-center items-center">
         <img src="/logo/logo.svg" alt="#">
@@ -28,7 +28,7 @@
                 </svg>
             </label>
         </div>
-        <div class="" (click)="toggleSideBar()">
+        <div class="" (click)="toggleSearchBar()">
             <img src=" /navbar_icons/search.svg" alt="#" class="h-8">
         </div>
         <div class="hidden 1100:inline-block">
@@ -40,7 +40,7 @@
             </button>
         </div>
         <div class="hidden 650:inline-block 1100:hidden">
-            <img src="/navbar_icons/menu.svg" alt="#" class="h-8 w-8">
+            <app-navigation-hamburger-menu />
         </div>
     </div>
 </div>

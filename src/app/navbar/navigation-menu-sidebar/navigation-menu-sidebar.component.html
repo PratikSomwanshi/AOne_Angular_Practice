@@ -1,0 +1,26 @@
+<div
+    [ngClass]="globalState.showSideBar ? 'fixed inset-0 w-full h-full bg-black bg-opacity-50 backdrop-blur-sm z-40' : 'hidden'">
+    <div class="650:container mx-auto h-full w-full px-4 sm:px-6 lg:px-8 flex flex-col p-2">
+        <div class="p-2 flex justify-end">
+            <p class="text-xl" (click)="globalState.toggleSideBar()">❌</p>
+        </div>
+        <div class='mt-24 space-y-2'>
+            <div class="text-3xl ml-2 250:ml-10 350:ml-24 ">
+                <h2 class="link font-semibold" (click)="globalState.toggleSearchBar()">Search</h2>
+            </div>
+            @for(link of links_list; track $index){
+            <div class="text-3xl ml-2 250:ml-10 350:ml-24 ">
+                <!-- TODO: add link -->
+                <h2 class="link font-semibold">{{link.name}}</h2>
+            </div>
+            }
+            <div class="text-3xl ml-2 250:ml-10 350:ml-24 pt-8">
+                <label class="flex cursor-pointer gap-2">
+                    <span class="label-text">Dark</span>
+                    <input type="checkbox" value="light" class="toggle theme-controller" />
+                    <span class="label-text">Light</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

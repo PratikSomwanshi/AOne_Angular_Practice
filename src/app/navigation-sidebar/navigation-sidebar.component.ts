@@ -9,7 +9,7 @@ import { GlobalStateService } from '../global-state.service';
 export class NavigationSidebarComponent {
   globalState = inject(GlobalStateService);
 
-  toggleSideBar() {
-    this.globalState.toggleSideBar();
+  toggleSearchBar() {
+    this.globalState.toggleSearchBar();
   }
 }
