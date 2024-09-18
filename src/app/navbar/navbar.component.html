@@ -1,11 +1,16 @@
-<div class="h-[5rem] border-b border-white flex justify-around items-center">
-    <div>
-        <img src="/logo/logo.svg" alt="">
+<div
+    class="h-[5rem] border-b border-white flex justify-between  1100:justify-around items-center px-2 650:container mx-auto">
+    <div class="650:hidden ">
+        <img src="/navbar_icons/menu.svg" alt="#" class="h-8 w-8">
     </div>
-    <div class="h-full">
+    <div class="min-w-10 min-h-full flex justify-center items-center">
+        <img src="/logo/logo.svg" alt="#">
+    </div>
+
+    <div class=" h-full hidden 1100:block">
         <app-navbar-main-links />
     </div>
-    <div class="h-full flex items-center w-[14rem] justify-between">
+    <div class="h-full hidden 300:flex items-center min-w-[10%] 650:w-[10rem] 1100:w-[12rem] justify-between ">
         <div class="mt-3">
             <label class="swap swap-rotate">
                 <!-- this hidden checkbox controls the state -->
@@ -26,13 +31,16 @@
         <div class="">
             <img src=" /navbar_icons/search.svg" alt="#" class="h-8">
         </div>
-        <div>
+        <div class="hidden 1100:inline-block">
             <button class="btn rounded-full px-2">
                 <div class="rounded-full bg-white h-7 w-7">
                     <img src="" alt="">
                 </div>
                 English
             </button>
+        </div>
+        <div class="hidden 650:inline-block 1100:hidden">
+            <img src="/navbar_icons/menu.svg" alt="#" class="h-8 w-8">
         </div>
     </div>
 </div>
