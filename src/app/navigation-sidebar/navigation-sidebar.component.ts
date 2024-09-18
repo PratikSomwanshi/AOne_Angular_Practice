@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { GlobalStateService } from '../global-state.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  selector: 'app-navigation-sidebar',
+  templateUrl: './navigation-sidebar.component.html',
+  styleUrl: './navigation-sidebar.component.css',
 })
-export class NavbarComponent {
+export class NavigationSidebarComponent {
   globalState = inject(GlobalStateService);
 
   toggleSideBar() {

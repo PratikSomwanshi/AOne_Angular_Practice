@@ -11,9 +11,10 @@ import { ProgramsComponent } from './programs/programs.component';
 import { NewsComponent } from './news/news.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { FaqsComponent } from './faqs/faqs.component';
+import { NavigationSidebarComponent } from './navigation-sidebar/navigation-sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent],
+  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

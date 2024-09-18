@@ -1,10 +1,21 @@
 <ul class="h-full flex">
     @for(link of link_list; track $index){
-    <li class=" h-full w-[8rem]">
+    <li class=" h-full w-[8rem] relative group">
         <a href="#" class="flex flex-col justify-center items-center h-full hover:brightness-75 transition-all">
             <img src="{{link.icon}}" alt="nothing" class="h-[45%]">
             <p class="">{{link.name}}</p>
         </a>
+
+        @if(link.name === 'Games' || link.name === 'Programs'){
+        <div
+            class="absolute hidden w-full rounded-md shadow-md p-4  transition-opacity duration-300  group-hover:inline-block top-full left-0 z-10">
+
+
+            @for(game of link?.content; track $index){
+            <p>{{game}}</p>
+            }
+        </div>
+        }
     </li>
     }
 </ul>

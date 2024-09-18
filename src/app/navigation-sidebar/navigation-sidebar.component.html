@@ -1,0 +1,5 @@
+<div [ngClass]="globalState.showSideBar ? 'absolute top-0 w-screen h-screen bg-slate-100'
+    : 'hidden'">
+    <h1>{{globalState.showSideBar}}</h1>
+    <button class=" btn" (click)="toggleSideBar()">toggle</button>
+</div>
