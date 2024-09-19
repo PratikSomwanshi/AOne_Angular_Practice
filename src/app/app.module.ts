@@ -15,9 +15,10 @@ import { NavigationSidebarComponent } from './navigation-sidebar/navigation-side
 import { NavigationHamburgerMenuComponent } from './navbar/navigation-hamburger-menu/navigation-hamburger-menu.component';
 import { NavigationMenuSidebarComponent } from './navbar/navigation-menu-sidebar/navigation-menu-sidebar.component';
 import { HomeComponent } from './home/home.component';
+import { HeroSectionComponent } from './home/hero-section/hero-section.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent, NavigationHamburgerMenuComponent, NavigationMenuSidebarComponent, HomeComponent],
+  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent, NavigationHamburgerMenuComponent, NavigationMenuSidebarComponent, HomeComponent, HeroSectionComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
