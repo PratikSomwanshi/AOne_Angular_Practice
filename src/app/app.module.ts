@@ -16,9 +16,29 @@ import { NavigationHamburgerMenuComponent } from './navbar/navigation-hamburger-
 import { NavigationMenuSidebarComponent } from './navbar/navigation-menu-sidebar/navigation-menu-sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { HeroSectionComponent } from './home/hero-section/hero-section.component';
+import { LatestParentComponent } from './home/latest-parent/latest-parent.component';
+import { LatestChildComponent } from './home/latest-parent/latest-child/latest-child.component';
+import { StarRatingComponent } from './home/star-rating/star-rating.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, NavbarMainLinksComponent, GamesComponent, ProgramsComponent, NewsComponent, ArticlesComponent, FaqsComponent, NavigationSidebarComponent, NavigationHamburgerMenuComponent, NavigationMenuSidebarComponent, HomeComponent, HeroSectionComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    NavbarMainLinksComponent,
+    GamesComponent,
+    ProgramsComponent,
+    NewsComponent,
+    ArticlesComponent,
+    FaqsComponent,
+    NavigationSidebarComponent,
+    NavigationHamburgerMenuComponent,
+    NavigationMenuSidebarComponent,
+    HomeComponent,
+    HeroSectionComponent,
+    LatestParentComponent,
+    LatestChildComponent,
+    StarRatingComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
