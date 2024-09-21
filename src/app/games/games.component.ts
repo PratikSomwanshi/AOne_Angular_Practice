@@ -113,10 +113,6 @@ export class GamesComponent {
         behavior: 'smooth', // Enable smooth scrolling
         block: 'start', // Scroll to the top of the parent container
       });
-
-      setTimeout(() => {
-        window.scrollBy(0, -30); // Scroll up by 50 pixels
-      }, 300);
     }
   }
 

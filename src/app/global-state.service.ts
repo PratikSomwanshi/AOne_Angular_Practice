@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 export class GlobalStateService {
   showSearch = false;
   showSideBar = false;
+  theme = true;
+  theme_internal = 'dark';
 
   constructor() {}
 
@@ -15,5 +17,10 @@ export class GlobalStateService {
 
   toggleSideBar() {
     this.showSideBar = !this.showSideBar;
+  }
+
+  setTheme() {
+    this.theme = !this.theme;
+    console.log(this.theme);
   }
 }

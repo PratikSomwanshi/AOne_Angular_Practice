@@ -19,6 +19,7 @@ import { LatestParentComponent } from './home/latest-parent/latest-parent.compon
 import { LatestChildComponent } from './home/latest-parent/latest-child/latest-child.component';
 import { StarRatingComponent } from './home/star-rating/star-rating.component';
 import { PokemonSkeletonComponent } from './components/skeletons/pokemon-skeleton/pokemon-skeleton.component';
+import { ThemeSwitchComponent } from './components/theme-switch/theme-switch.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PokemonSkeletonComponent } from './components/skeletons/pokemon-skeleto
     LatestChildComponent,
     StarRatingComponent,
     PokemonSkeletonComponent,
+    ThemeSwitchComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
