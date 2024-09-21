@@ -1,29 +1,56 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-latest-parent',
   templateUrl: './latest-parent.component.html',
   styleUrl: './latest-parent.component.css',
 })
-export class LatestParentComponent {
+export class LatestParentComponent implements OnInit, AfterViewInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
-  items = Array(9)
-    .fill(0)
-    .map((_, i) => i);
+  items: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  displayedItems: number[] = [];
 
-  scrollLeft() {
-    console.log(this.scrollContainer.nativeElement.scrollWidth);
-    this.scrollContainer.nativeElement.scrollBy({
-      left: -200,
-      behavior: 'smooth',
-    });
+  ngOnInit() {
+    this.initializeItems();
+  }
+
+  ngAfterViewInit() {
+    this.scrollToMiddle();
+  }
+
+  initializeItems() {
+    this.displayedItems = [...this.items, ...this.items, ...this.items];
+  }
+
+  scrollToMiddle() {
+    const container = this.scrollContainer.nativeElement;
+    const middleIndex = Math.floor(this.displayedItems.length / 2);
+    const scrollLeft = middleIndex * 240; // Adjust 240 based on your item width
+    container.scrollLeft = scrollLeft;
+  }
+
+  onScroll() {
+    const container = this.scrollContainer.nativeElement;
+    const scrollPosition = container.scrollLeft;
+    const containerWidth = container.clientWidth;
+    const scrollWidth = container.scrollWidth;
+
+    if (scrollPosition + containerWidth >= scrollWidth - 100) {
+      // Near the end, append items to the right
+      this.displayedItems = [...this.displayedItems, ...this.items];
+    }
   }
 
   scrollRight() {
-    console.log(this.scrollContainer.nativeElement.scrollWidth);
     this.scrollContainer.nativeElement.scrollBy({
-      left: 200,
+      left: 240,
       behavior: 'smooth',
     });
   }

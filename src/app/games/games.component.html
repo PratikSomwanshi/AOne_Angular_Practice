@@ -1,1 +1,42 @@
-<p>games works!</p>
+<div>
+    <div class="min-h-[80vh]" #parentContainer>
+        @if(loading){
+        <div class="flex justify-center items-center h-screen">
+            <p class="text-3xl">Loading...</p>
+        </div>
+        }@else if(error){
+        <p>Error: {{error}}</p>
+        }@else{
+        @for(poke of pokemon; track $index){
+        <div class="h-[10rem]">
+            <h2>{{poke.forms[0].name}}</h2>
+            <img class="h-[inherit]" src="{{poke.sprites.other.dream_world.front_default}}"
+                alt="{{poke.forms[0].name}}">
+        </div>
+        }
+        }
+
+
+    </div>
+
+    <!-- <button (click)="getPokemonUrls(1)" class="btn" [disabled]="currentPage == 1 || loading">1</button>
+
+    <button (click)="getPokemonUrls(2)" class="btn" [disabled]="currentPage == 2 || loading">2</button>
+    <button (click)="getPokemonUrls(3)" class="btn" [disabled]="currentPage == 3 || loading">3</button> -->
+
+    <!-- Pagination controls -->
+    <div class="flex justify-center items-center gap-2">
+        <button (click)="goToFirstPage()" [disabled]="currentPage === 1" class="btn">First</button>
+        <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="btn">Previous</button>
+
+        <ng-container *ngFor="let page of getVisiblePages()">
+            <button (click)="getPokemonUrls(page)" [disabled]="page === currentPage" class="btn">
+                {{ page }}
+            </button>
+        </ng-container>
+
+        <button (click)="goToNextPage()" [disabled]="currentPage === totalPages" class="btn">Next</button>
+        <button (click)="goToLastPage()" [disabled]="currentPage === totalPages" class="btn">Last</button>
+    </div>
+
+</div>
