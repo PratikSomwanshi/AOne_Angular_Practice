@@ -27,13 +27,13 @@
 
 
     <!-- Pagination controls -->
-    <div class="flex flex-col 200:flex-row justify-center items-center  mt-14 join">
+    <div class="flex flex-col 200:flex-row justify-center items-center  mt-14 join join-horizontal">
         <!-- <button (click)="goToFirstPage()" [disabled]="currentPage === 1" class="btn join-item">First</button> -->
         <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="btn join-item w-24">Previous</button>
 
 
         <div *ngFor="let page of getVisiblePages()" class="hidden 400:inline-block">
-            <button (click)="getPokemonUrls(page)" [disabled]="page === currentPage" class="btn ">
+            <button (click)="getPokemonUrls(page)" [disabled]="page === currentPage" class="btn join-item">
                 {{ page }}
             </button>
         </div>
