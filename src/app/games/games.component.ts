@@ -43,6 +43,8 @@ export class GamesComponent {
   pageSize = 10; // Number of Pokémon per page
   visiblePages = 5;
 
+  skeleton = Array.from({ length: 10 });
+
   ngOnInit() {
     this.getPokemonUrls(1);
   }
@@ -111,6 +113,10 @@ export class GamesComponent {
         behavior: 'smooth', // Enable smooth scrolling
         block: 'start', // Scroll to the top of the parent container
       });
+
+      setTimeout(() => {
+        window.scrollBy(0, -30); // Scroll up by 50 pixels
+      }, 300);
     }
   }
 

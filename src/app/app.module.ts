@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgIconsModule } from '@ng-icons/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +18,7 @@ import { HeroSectionComponent } from './home/hero-section/hero-section.component
 import { LatestParentComponent } from './home/latest-parent/latest-parent.component';
 import { LatestChildComponent } from './home/latest-parent/latest-child/latest-child.component';
 import { StarRatingComponent } from './home/star-rating/star-rating.component';
+import { PokemonSkeletonComponent } from './components/skeletons/pokemon-skeleton/pokemon-skeleton.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { StarRatingComponent } from './home/star-rating/star-rating.component';
     LatestParentComponent,
     LatestChildComponent,
     StarRatingComponent,
+    PokemonSkeletonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

@@ -1,42 +1,47 @@
-<div>
-    <div class="min-h-[80vh]" #parentContainer>
-        @if(loading){
-        <div class="flex justify-center items-center h-screen">
-            <p class="text-3xl">Loading...</p>
-        </div>
-        }@else if(error){
+<div class=" 750:container mx-auto py-8">
+    <div class="" #parentContainer>
+
+        @if(error){
         <p>Error: {{error}}</p>
         }@else{
-        @for(poke of pokemon; track $index){
-        <div class="h-[10rem]">
-            <h2>{{poke.forms[0].name}}</h2>
-            <img class="h-[inherit]" src="{{poke.sprites.other.dream_world.front_default}}"
-                alt="{{poke.forms[0].name}}">
+        <div class="flex flex-wrap gap-8 w-screen justify-center mx-auto 750:w-[80%] px-2 overflow-hidden ">
+            @if(loading){
+            @for(i of skeleton; track $index){
+            <div class="h-[18rem] w-[17rem]  px-4">
+                <app-pokemon-skeleton></app-pokemon-skeleton>
+            </div>
+            }}@else{
+            @for(poke of pokemon; track $index){
+            <div class="h-[18rem] w-[17rem] bg-base-200 px-4">
+                <h2 class="text-end text-xl mt-1">{{poke.forms[0].name}}</h2>
+                <img class="h-[18rem]" src="{{poke.sprites.other.dream_world.front_default}}"
+                    alt="{{poke.forms[0].name}}">
+            </div>
+            }
+            }
         </div>
         }
-        }
 
 
     </div>
 
-    <!-- <button (click)="getPokemonUrls(1)" class="btn" [disabled]="currentPage == 1 || loading">1</button>
-
-    <button (click)="getPokemonUrls(2)" class="btn" [disabled]="currentPage == 2 || loading">2</button>
-    <button (click)="getPokemonUrls(3)" class="btn" [disabled]="currentPage == 3 || loading">3</button> -->
 
     <!-- Pagination controls -->
-    <div class="flex justify-center items-center gap-2">
-        <button (click)="goToFirstPage()" [disabled]="currentPage === 1" class="btn">First</button>
-        <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="btn">Previous</button>
+    <div class="flex flex-col 200:flex-row justify-center items-center  mt-14 join">
+        <!-- <button (click)="goToFirstPage()" [disabled]="currentPage === 1" class="btn join-item">First</button> -->
+        <button (click)="goToPreviousPage()" [disabled]="currentPage === 1" class="btn join-item w-24">Previous</button>
 
-        <ng-container *ngFor="let page of getVisiblePages()">
-            <button (click)="getPokemonUrls(page)" [disabled]="page === currentPage" class="btn">
+
+        <div *ngFor="let page of getVisiblePages()" class="hidden 400:inline-block">
+            <button (click)="getPokemonUrls(page)" [disabled]="page === currentPage" class="btn ">
                 {{ page }}
             </button>
-        </ng-container>
+        </div>
 
-        <button (click)="goToNextPage()" [disabled]="currentPage === totalPages" class="btn">Next</button>
-        <button (click)="goToLastPage()" [disabled]="currentPage === totalPages" class="btn">Last</button>
+        <button (click)="goToNextPage()" [disabled]="currentPage === totalPages"
+            class="btn join-item w-24">Next</button>
+        <!-- <button (click)="goToLastPage()" [disabled]="currentPage === totalPages" class="btn join-item">Last</button> -->
     </div>
+
 
 </div>
